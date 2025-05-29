@@ -1,0 +1,260 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeD.E - Affordable Websites for Small Businesses</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+ </head>
+ 
+
+ <body>
+  <header>
+  <div class="logo">WeD.E</div>
+  <nav>
+  <ul>
+  <li><a href="#about">Why Static?</a></li>
+  <li><a href="#projects">Our Work</a></li>
+  <li><a href="#pricing">Pricing</a></li>
+  <li><a href="#contact">Get a Quote</a></li>
+  </ul>
+  </nav>
+  </header>
+ 
+
+  <section id="hero">
+  <div class="hero-content">
+  <h1>Affordable Websites That Work for You</h1>
+  <p>
+  WeD.E helps small businesses get online with beautiful,
+  fast-loading static websites. No hidden costs, just simple and
+  effective web solutions.
+  </p>
+  <a href="#contact" class="cta-button">Get a Free Quote</a>
+  </div>
+  </section>
+ 
+
+  <section id="about">
+  <h2>Why Static Websites?</h2>
+  <div class="about-content">
+  <div class="about-text">
+  <p>
+  Static websites are the perfect solution for small businesses
+  looking for a reliable and cost-effective online presence. They
+  offer:
+  </p>
+  <ul>
+  <li>
+  <strong>Speed:</strong> Lightning-fast loading times for a better user
+  experience.
+  </li>
+  <li>
+  <strong>Security:</strong> Reduced risk of security vulnerabilities
+  compared to dynamic websites.
+  </li>
+  <li>
+  <strong>Affordability:</strong> Lower development and hosting costs,
+  making it perfect for budget-conscious businesses.
+  </li>
+  <li>
+  <strong>Simplicity:</strong> Easy to manage and update without the
+  complexity of databases and server-side scripting.
+  </li>
+  </ul>
+  <p>
+  We focus on creating high-quality static websites that are
+  optimized for search engines and designed to convert visitors into
+  customers.
+  </p>
+  </div>
+  </div>
+  </section>
+ 
+
+  <section id="projects">
+  <h2>Our Work</h2>
+  <p class="section-description">
+  Examples of static websites we've built for small businesses like
+  yours.
+  </p>
+  <div class="project-grid">
+  <div class="project-item">
+  <img src="images/logo.png" alt="Linos Tavern" style="object-fit: contain;" />
+  <h3>Linos tavern</h3>
+  <p>This is a project of ours and an example of a <a href="#pricing" style="color: #e44d26; text-decoration: none; font-weight: bold;">standard</a> website</p>
+  <a href="#" class="project-link">View Project <i
+  class="fas fa-external-link-alt"></i></a>
+  </div>
+  </div>
+  </section>
+ 
+
+  <section id="pricing">
+  <h2>Pricing</h2>
+  <p class="section-description">
+  Simple and straightforward pricing for static website development.
+  </p>
+  <div class="pricing-table">
+  <div class="pricing-tier">
+  <h3>Basic</h3>
+  <p class="price">&euro;200</p>
+  <ul>
+  <li>Single page</li>
+  <li>Custom Design</li>
+  <li>Responsive Design</li>
+  <li>Interactive Map</li>
+  <li>Social Media Integration</li>
+  <li>Images</li>
+  </ul>
+  <a href="#contact" class="pricing-button">Get Started</a>
+  </div>
+  <div class="pricing-tier">
+  <h3>Standard</h3>
+  <p class="price">&euro;450</p>
+  <ul>
+  <li>Up to 5 Pages</li>
+  <li>Navigation</li>
+  <li>Custom Design</li>
+  <li>Responsive Design</li>
+  <li>Interactive Map</li>
+  <li>Social Media Integration</li>
+  <li>Images</li>
+  </ul>
+  <a href="#contact" class="pricing-button">Get Started</a>
+  </div>
+  </div>
+  </section>
+ 
+
+  <section id="contact">
+  <h2>Get a Free Quote</h2>
+  <p>Let's discuss your website needs and provide you with a custom quote.</p>
+  <p></p><a href="tel:+35797667242" style="color: #e44d26; text-decoration: none; font-weight: bold;">Call us on 97667242</a> or</p>
+  <form id="contact-form" action="https://formspree.io/f/xvgrppgd" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required />
+ 
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required>
+ 
+
+  <label for="business">Business Name:</label>
+  <input type="text" id="business" name="business" required />
+ 
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+ 
+
+  <button type="submit" id="submitButton">Request a Quote</button>
+
+  <p id="formMessage" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
+  
+  </form>
+
+  <div id="form-message"></div>
+  </section>
+ 
+
+  <footer>
+  <p>&copy; 2025 WeD.E - Affordable Websites for Small Businesses</p>
+  <div class="social-links">
+  <a href="tel:+35797667242" class="call-button" style="text-decoration: none;">Call here</a>
+  
+  </div>
+  </footer>
+ 
+
+  <script>
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+  e.preventDefault();
+ 
+
+  document.querySelector(this.getAttribute('href')).scrollIntoView({
+  behavior: 'smooth',
+  });
+  });
+  });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submitButton');
+        const formMessage = document.getElementById('formMessage');
+
+        // Ensure all elements exist before adding event listener
+        if (form && submitButton && formMessage) {
+            // Initially hide the message area
+            formMessage.style.display = 'none';
+
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault(); //stops page redirect
+
+                // 1. Disable button and show sending message
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                formMessage.textContent = 'Sending your request...';
+                formMessage.className = ''; // Clear any previous success/error classes
+                formMessage.style.color = '#007bff'; // Blue for informational message
+                formMessage.style.backgroundColor = 'transparent'; // No background
+                formMessage.style.border = 'none'; // No border
+                formMessage.style.display = 'block'; // Show message
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Crucial for Formspree's AJAX API
+                        }
+                    });
+
+                    if (response.ok) { // HTTP status 2xx means success
+                        formMessage.textContent = 'Quote request sent successfully! We will get back to you soon.';
+                        formMessage.className = 'success'; // Add success styling class
+                        form.reset(); // Clear the form fields
+                    } else {
+                        // Handle HTTP errors or Formspree specific errors
+                        const data = await response.json(); // Try to parse Formspree's error response
+                        const errorMessage = data.errors ? data.errors.map(err => err.message).join(', ') : 'Error sending request. Please try again.';
+                        formMessage.textContent = errorMessage;
+                        formMessage.className = 'error'; // Add error styling class
+                    }
+                } catch (error) {
+                    // Handle network errors (e.g., no internet connection)
+                    console.error('Network Error:', error);
+                    formMessage.textContent = 'Network error. Please check your connection and try again.';
+                    formMessage.className = 'error'; // Add error styling class
+                } finally {
+                    // Re-enable button and reset text after attempt (whether success or error)
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Request a Quote';
+
+                    // Optional: Hide message after a few seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 7000); // Hide after 7 seconds
+                }
+            });
+        }
+    });
+</script>
+ </body>
+ 
+
+ </html>
