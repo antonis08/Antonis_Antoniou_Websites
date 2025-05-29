@@ -420,44 +420,43 @@ section h2 {
         display: block; /* Show hamburger icon on small screens */
     }
 
+    /* Styles for the main navigation links container when not active */
     .main-nav ul.nav-links {
-    /* ... other styles ... */
-    max-height: 0;
-    overflow: hidden;
-    /* Add 'visibility' and 'opacity' for a cleaner hide */
-    visibility: hidden; /* Hides it from screen readers and interaction */
-    opacity: 0;       /* Makes it fully transparent */
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out,
-                visibility 0s 0.3s, opacity 0.3s ease-out; /* Add transition for these */
-    /*
-        visibility 0s 0.3s: Make it visible instantly when opening, hidden after 0.3s when closing.
-        opacity 0.3s ease-out: Smooth opacity transition.
-    */
-}
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 100%; /* Position directly below the header */
+        left: 0;
+        width: 100%;
+        background-color: #333; /* This is your gray bar background */
+        border-top: 1px solid #444; /* Separator line below header */
+        padding: 1rem 0; /* Initial padding when closed - this will be the 'ribbon' height */
+        max-height: 0;   /* Collapses the menu items, hiding them */
+        overflow: hidden;
+        /* Smooth transition for max-height and padding */
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
 
-.main-nav ul.nav-links.active {
-    /* ... other styles ... */
-    max-height: 300px; /* Or a value large enough */
-    padding: 1rem 0;
-    /* When active, make it visible and opaque */
-    visibility: visible;
-    opacity: 1;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out,
-                visibility 0s 0s, opacity 0.3s ease-in; /* Show instantly, hide after delay */
-}
+    /* Styles for the main navigation links container when active (open) */
+    .main-nav ul.nav-links.active {
+        max-height: 300px; /* Expands to show all menu items */
+        padding: 1rem 0; /* Apply the desired padding when open */
+        /* No transition needed here, it's defined on the base .nav-links rule */
+    }
 
+    /* Styles for individual list items in the mobile nav */
     .main-nav ul.nav-links li {
         margin: 0; /* Remove horizontal margins from list items */
         text-align: center;
         padding: 0.75rem 0; /* Add vertical padding for tappable area */
     }
 
+    /* Styles for the links themselves within the mobile nav */
     .main-nav ul.nav-links li a {
-        display: block; /* Make links fill the list item width */
+        display: block; /* Make links fill the entire list item width */
         padding: 0.5rem 1rem; /* Add padding to clickable area */
     }
 
-    /* Fix for project grid on very small screens (highly recommended) */
+    /* Fix for project grid on very small screens */
     .project-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow smaller items */
     }
@@ -466,15 +465,4 @@ section h2 {
     section {
         padding: 3rem 1rem; /* Slightly less vertical padding and reduced horizontal padding */
     }
-}
-
-/* Also ensure this is at the VERY TOP of your style.css */
-html {
-    box-sizing: border-box;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
