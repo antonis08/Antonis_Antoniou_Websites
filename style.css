@@ -420,24 +420,31 @@ section h2 {
         display: block; /* Show hamburger icon on small screens */
     }
 
-    .main-nav ul.nav-links { /* Target the specific nav-links list */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute;
-        top: 100%; /* Position below the header */
-        left: 0;
-        width: 100%;
-        background-color: #333; /* Background for the dropdown menu */
-        border-top: 1px solid #444; /* Separator line */
-        padding: 1rem 0;
-        max-height: 0; /* Initially hidden by collapsing height */
-        overflow: hidden; /* Hide content that exceeds max-height */
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition for opening/closing */
-    }
+    .main-nav ul.nav-links {
+    /* ... other styles ... */
+    max-height: 0;
+    overflow: hidden;
+    /* Add 'visibility' and 'opacity' for a cleaner hide */
+    visibility: hidden; /* Hides it from screen readers and interaction */
+    opacity: 0;       /* Makes it fully transparent */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out,
+                visibility 0s 0.3s, opacity 0.3s ease-out; /* Add transition for these */
+    /*
+        visibility 0s 0.3s: Make it visible instantly when opening, hidden after 0.3s when closing.
+        opacity 0.3s ease-out: Smooth opacity transition.
+    */
+}
 
-    .main-nav ul.nav-links.active { /* Class added by JS when toggled */
-        max-height: 300px; /* Or a value large enough to show all links */
-        padding: 1rem 0; /* Restore padding when active */
-    }
+.main-nav ul.nav-links.active {
+    /* ... other styles ... */
+    max-height: 300px; /* Or a value large enough */
+    padding: 1rem 0;
+    /* When active, make it visible and opaque */
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out,
+                visibility 0s 0s, opacity 0.3s ease-in; /* Show instantly, hide after delay */
+}
 
     .main-nav ul.nav-links li {
         margin: 0; /* Remove horizontal margins from list items */
