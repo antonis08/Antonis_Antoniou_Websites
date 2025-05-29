@@ -1,468 +1,465 @@
-/* style.css */
-
 /* Universal Box-Sizing for consistency */
 html {
-    box-sizing: border-box;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: border-box;
 }
 
-/* Prevent horizontal scrolling if any element overflows */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Base Body Styles */
 body {
-    overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-body {
- font-family: 'Arial', sans-serif;
- margin: 0;
- padding: 0;
- background-color: #f9f9f9;
- color: #333;
- line-height: 1.6;
-}
-
-
-/* Header */
+/* --- Header Section --- */
 header {
-    background-color: #222;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    /* --- CHANGES FOR FIXED NAVBAR --- */
-    position: fixed; /* Changed from relative to fixed */
-    width: 100%;     /* Ensure it spans the full width */
-    top: 0;          /* Stick it to the top of the viewport */
-    left: 0;         /* Stick it to the left edge of the viewport */
-    /* --- END CHANGES --- */
-    z-index: 1000;   /* Keep this high so it's above other content */
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed; /* Makes the header stick to the top */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures header is above other content */
 }
-
 
 .logo {
- font-size: 1.5rem;
- font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-
+/* Main Navigation Styles */
 .main-nav ul {
-    padding: 0;
-    list-style: none;
-    display: flex; /* Default for desktop */
+  padding: 0;
+  list-style: none;
+  display: flex; /* Default for desktop navigation */
 }
-
 
 .main-nav ul li {
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
-
 
 nav a {
- color: #fff;
- text-decoration: none;
- transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-
 
 nav a:hover {
- color: #ddd;
+  color: #ddd;
 }
 
+/* Mobile Navigation Toggle Button (Hamburger) */
+.nav-toggle {
+  display: none; /* Hidden by default on larger screens */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem; /* Size of the hamburger icon */
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Ensure button is clickable above the menu */
+}
 
-/* Hero Section */
+/* --- Hero Section --- */
 #hero {
- background-color: #444;
- color: #fff;
- text-align: center;
- padding: 5rem 2rem;
- padding-top: 8rem;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+  padding-top: 8rem; /* Space for the fixed header */
 }
-
 
 .hero-content h1 {
- font-size: 3rem;
- margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
-
 
 .hero-content p {
- font-size: 1.2rem;
- margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
-
 
 .cta-button {
- display: inline-block;
- background-color: #e44d26;
- color: #fff;
- padding: 1rem 2rem;
- text-decoration: none;
- border-radius: 5px;
- transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #e44d26;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-
 
 .cta-button:hover {
- background-color: #d43c14;
+  background-color: #d43c14;
 }
 
+/* --- Section Headings (General Style) --- */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-/* About Section */
+/* --- About Section --- */
 #about {
- padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
-
 
 .about-content {
- display: flex;
- gap: 2rem;
- align-items: center;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
-
 
 .about-text {
- flex: 2;
+  flex: 2;
 }
-
 
 .about-text ul {
- list-style: disc;
- padding-left: 20px;
+  list-style: disc;
+  padding-left: 20px;
 }
-
 
 .about-image {
- flex: 1;
+  flex: 1;
 }
-
 
 .about-image img {
- width: 100%;
- border-radius: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
 
-
-/* Projects Section */
+/* --- Projects Section --- */
 #projects {
- padding: 4rem 2rem;
- background-color: #f4f4f4;
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
 }
-
 
 .section-description {
- text-align: center;
- margin-bottom: 2rem;
- color: #777;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #777;
 }
-
 
 .project-grid {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
- gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
-
 
 .project-item {
- background-color: #fff;
- border-radius: 5px;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- overflow: hidden;
- transition: transform 0.3s ease;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
-
 
 .project-item:hover {
- transform: translateY(-5px);
+  transform: translateY(-5px);
 }
-
 
 .project-item img {
- width: 100%;
- height: 220px;
- object-fit: cover;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
-
 
 .project-item h3 {
- padding: 1rem;
- margin: 0;
- font-size: 1.3rem;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.3rem;
 }
-
 
 .project-item p {
- padding: 0 1rem 1rem;
- margin: 0;
+  padding: 0 1rem 1rem;
+  margin: 0;
 }
-
 
 .project-link {
- display: block;
- padding: 1rem;
- background-color: #e44d26;
- color: #fff;
- text-decoration: none;
- text-align: center;
- transition: background-color 0.3s ease;
+  display: block;
+  padding: 1rem;
+  background-color: #e44d26;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
-
 
 .project-link:hover {
- background-color: #d43c14;
+  background-color: #d43c14;
 }
 
-
-/* Pricing Section */
+/* --- Pricing Section --- */
 #pricing {
- padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
-
 
 .pricing-table {
- display: flex;
- justify-content: space-around;
- flex-wrap: wrap;
- gap: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-
 
 .pricing-tier {
- background-color: #fff;
- border-radius: 5px;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- padding: 2rem;
- text-align: center;
- width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  width: 300px;
 }
-
 
 .pricing-tier h3 {
- font-size: 1.5rem;
- margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 
 .pricing-tier .price {
- font-size: 2rem;
- font-weight: bold;
- color: #e44d26;
- margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e44d26;
+  margin-bottom: 1rem;
 }
-
 
 .pricing-tier ul {
- list-style: none;
- padding: 0;
- margin-bottom: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
 }
-
 
 .pricing-tier li {
- margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-
 
 .pricing-button {
- display: inline-block;
- background-color: #e44d26;
- color: #fff;
- padding: 0.75rem 1.5rem;
- text-decoration: none;
- border-radius: 5px;
- transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #e44d26;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-
 
 .pricing-button:hover {
- background-color: #d43c14;
+  background-color: #d43c14;
 }
 
-
-/* Contact Section */
+/* --- Contact Section --- */
 #contact {
- padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
-
 
 #contact form {
- display: flex;
- flex-direction: column;
- max-width: 600px;
- margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
 
 #contact label {
- margin-top: 1rem;
- font-weight: bold;
+  margin-top: 1rem;
+  font-weight: bold;
 }
-
 
 #contact input,
 #contact textarea {
- padding: 0.75rem;
- margin-bottom: 1rem;
- border: 1px solid #ddd;
- border-radius: 5px;
- font-size: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
 }
-
 
 #contact button {
- background-color: #e44d26;
- color: #fff;
- padding: 1rem 2rem;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- transition: background-color 0.3s ease;
- font-size: 1.1rem;
-}
-
-#call{
- background-color: #e44d26;
- color: #fff;
- padding: 1rem 2rem;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- transition: background-color 0.3s ease;
- font-size: 1.1rem;
-}
-
-#call:hover{
-     background-color: #d43c14;
+  background-color: #e44d26;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
 }
 
 #contact button:hover {
- background-color: #d43c14;
+  background-color: #d43c14;
 }
 
-
-#form-message {
- margin-top: 1rem;
- color: green;
- font-weight: bold;
+#contact button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
+/* Specific Call Button (if different from form button) */
+#call {
+  background-color: #e44d26;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  display: inline-block; /* Ensure it behaves like a button */
+  text-decoration: none; /* Remove underline if used as an anchor */
+}
 
-/* Footer */
+#call:hover {
+  background-color: #d43c14;
+}
+
+/* Form Message (Success/Error) */
+#formMessage {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  display: none; /* Hidden by default, shown by JS */
+}
+
+#formMessage.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#formMessage.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* --- Footer Section --- */
 footer {
- background-color: #222;
- color: #fff;
- text-align: center;
- padding: 2rem;
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding: 1rem 2rem;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .social-links a {
- color: #fff;
- margin: 0 0.5rem;
- font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and larger mobile devices */
+  header {
+    padding: 1rem 1rem; /* Slightly less padding on smaller screens */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items on smaller screens */
+  }
 
-/* General Styles */
-section h2 {
- font-size: 2rem;
- margin-bottom: 1rem;
- text-align: center;
-}
-
-/* Add this to your existing <style> block */
-#formMessage {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
+  header .logo {
+    margin-bottom: 10px; /* Add space below logo when wrapped */
+    width: 100%; /* Make logo span full width */
     text-align: center;
-    font-weight: bold;
-    display: none; /* Hidden by default, shown by JS */
-}
-#formMessage.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-#formMessage.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
+  }
 
-/* ---------------------------------------------------- */
-/* NEW: Mobile Navbar Specific Styles */
-/* ---------------------------------------------------- */
+  .nav-toggle {
+    display: block; /* Show hamburger icon on small screens */
+    order: -1; /* Move toggle button before nav links */
+    margin-right: 20px;
+  }
 
-.nav-toggle {
-    display: none; /* Hidden by default on larger screens */
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem; /* Size of the hamburger icon */
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001; /* Ensure button is clickable above the menu */
-}
+  /* Mobile navigation links container */
+  .main-nav ul.nav-links {
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 100%; /* Position directly below the header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    border-top: 1px solid #444;
+    padding: 1rem 0; /* Initial padding when closed - height of the collapsed menu */
+    max-height: 0; /* Collapses the menu, hiding items */
+    overflow: hidden;
+    /* Smooth transition for opening/closing */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  }
 
-@media (max-width: 768px) { /* Adjust breakpoint as needed, 768px is common for tablets/large mobiles */
-    header {
-        padding: 1rem 1rem; /* Slightly less padding on smaller screens to maximize space */
-    }
+  /* Mobile navigation links container when active (open) */
+  .main-nav ul.nav-links.active {
+    max-height: 300px; /* Expands to show all menu items */
+    padding: 1rem 0; /* Apply desired padding when open */
+  }
 
-    .nav-toggle {
-        display: block; /* Show hamburger icon on small screens */
-    }
+  /* Individual list items in mobile nav */
+  .main-nav ul.nav-links li {
+    margin: 0; /* Remove horizontal margins */
+    text-align: center;
+    padding: 0.75rem 0; /* Add vertical padding for tappable area */
+  }
 
-    /* Styles for the main navigation links container when not active */
-    .main-nav ul.nav-links {
-        flex-direction: column; /* Stack links vertically */
-        position: absolute;
-        top: 100%; /* Position directly below the header */
-        left: 0;
-        width: 100%;
-        background-color: #333; /* This is your gray bar background */
-        border-top: 1px solid #444; /* Separator line below header */
-        padding: 1rem 0; /* Initial padding when closed - this will be the 'ribbon' height */
-        max-height: 0;   /* Collapses the menu items, hiding them */
-        overflow: hidden;
-        /* Smooth transition for max-height and padding */
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    }
+  /* Links within mobile nav */
+  .main-nav ul.nav-links li a {
+    display: block; /* Make links fill the entire list item width */
+    padding: 0.5rem 1rem; /* Add padding to clickable area */
+  }
 
-    /* Styles for the main navigation links container when active (open) */
-    .main-nav ul.nav-links.active {
-        max-height: 300px; /* Expands to show all menu items */
-        padding: 1rem 0; /* Apply the desired padding when open */
-        /* No transition needed here, it's defined on the base .nav-links rule */
-    }
+  /* Adjustments for sections on smaller screens */
+  section {
+    padding: 3rem 1rem; /* Slightly less vertical and horizontal padding */
+  }
 
-    /* Styles for individual list items in the mobile nav */
-    .main-nav ul.nav-links li {
-        margin: 0; /* Remove horizontal margins from list items */
-        text-align: center;
-        padding: 0.75rem 0; /* Add vertical padding for tappable area */
-    }
+  #hero h1 {
+    font-size: 2.2rem;
+  }
 
-    /* Styles for the links themselves within the mobile nav */
-    .main-nav ul.nav-links li a {
-        display: block; /* Make links fill the entire list item width */
-        padding: 0.5rem 1rem; /* Add padding to clickable area */
-    }
+  #hero p {
+    font-size: 1rem;
+  }
 
-    /* Fix for project grid on very small screens */
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow smaller items */
-    }
+  #about h2,
+  #projects h2,
+  #pricing h2,
+  #contact h2 {
+    font-size: 2em;
+  }
 
-    /* General section padding adjustment for mobile */
-    section {
-        padding: 3rem 1rem; /* Slightly less vertical padding and reduced horizontal padding */
-    }
+  .about-content {
+    flex-direction: column; /* Stack about content vertically */
+  }
+
+  /* Adjust project grid for smaller screens */
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow smaller items */
+  }
+
+  /* Adjust pricing table for smaller screens */
+  .pricing-table {
+    flex-direction: column; /* Stack pricing tiers vertically */
+    align-items: center; /* Center stacked tiers */
+  }
+
+  .pricing-tier {
+    width: 90%; /* Adjust width for mobile */
+  }
+
+  #contact-form {
+    padding: 20px;
+  }
 }
