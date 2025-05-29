@@ -1,5 +1,17 @@
 /* style.css */
 
+/* Universal Box-Sizing for consistency */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Prevent horizontal scrolling if any element overflows */
+body {
+    overflow-x: hidden;
+}
 
 body {
  font-family: 'Arial', sans-serif;
@@ -13,13 +25,15 @@ body {
 
 /* Header */
 header {
- background-color: #222;
- color: #fff;
- padding: 1rem 0;
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding: 1rem 2rem;
+    background-color: #222;
+    color: #fff;
+    /* Removed the duplicate padding line, keeping the 1rem 2rem one */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative; /* ADD THIS: Needed for absolute positioning of nav links */
+    z-index: 1000; /* ADD THIS: Ensure header is above other content */
 }
 
 
@@ -29,15 +43,15 @@ header {
 }
 
 
-nav ul {
- padding: 0;
- list-style: none;
- display: flex;
+.main-nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex; /* Default for desktop */
 }
 
 
-nav ul li {
- margin-left: 2rem;
+.main-nav ul li {
+    margin-left: 2rem;
 }
 
 
@@ -375,4 +389,80 @@ section h2 {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+/* ---------------------------------------------------- */
+/* NEW: Mobile Navbar Specific Styles */
+/* ---------------------------------------------------- */
+
+.nav-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem; /* Size of the hamburger icon */
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Ensure button is clickable above the menu */
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed, 768px is common for tablets/large mobiles */
+    header {
+        padding: 1rem 1rem; /* Slightly less padding on smaller screens to maximize space */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger icon on small screens */
+    }
+
+    .main-nav ul.nav-links { /* Target the specific nav-links list */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Background for the dropdown menu */
+        border-top: 1px solid #444; /* Separator line */
+        padding: 1rem 0;
+        max-height: 0; /* Initially hidden by collapsing height */
+        overflow: hidden; /* Hide content that exceeds max-height */
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition for opening/closing */
+    }
+
+    .main-nav ul.nav-links.active { /* Class added by JS when toggled */
+        max-height: 300px; /* Or a value large enough to show all links */
+        padding: 1rem 0; /* Restore padding when active */
+    }
+
+    .main-nav ul.nav-links li {
+        margin: 0; /* Remove horizontal margins from list items */
+        text-align: center;
+        padding: 0.75rem 0; /* Add vertical padding for tappable area */
+    }
+
+    .main-nav ul.nav-links li a {
+        display: block; /* Make links fill the list item width */
+        padding: 0.5rem 1rem; /* Add padding to clickable area */
+    }
+
+    /* Fix for project grid on very small screens (highly recommended) */
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow smaller items */
+    }
+
+    /* General section padding adjustment for mobile */
+    section {
+        padding: 3rem 1rem; /* Slightly less vertical padding and reduced horizontal padding */
+    }
+}
+
+/* Also ensure this is at the VERY TOP of your style.css */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }

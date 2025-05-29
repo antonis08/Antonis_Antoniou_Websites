@@ -18,17 +18,17 @@
  
 
  <body>
-  <header>
-  <div class="logo">WeD.E</div>
-  <nav>
-  <ul>
-  <li><a href="#about">Why Static?</a></li>
-  <li><a href="#projects">Our Work</a></li>
-  <li><a href="#pricing">Pricing</a></li>
-  <li><a href="#contact">Get a Quote</a></li>
-  </ul>
-  </nav>
-  </header>
+<header>
+    <div class="logo">WeD.E</div>
+    <nav class="main-nav"> <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> </button>
+        <ul class="nav-links"> <li><a href="#about">Why Static?</a></li>
+            <li><a href="#projects">Our Work</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+    </nav>
+</header>
  
 
   <section id="hero">
@@ -177,20 +177,35 @@
  
 
   <script>
-  // Smooth scrolling
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
-  e.preventDefault();
- 
-
-  document.querySelector(this.getAttribute('href')).scrollIntoView({
-  behavior: 'smooth',
-  });
-  });
-  });
-  </script>
-  <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // --- Smooth scrolling ---
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                });
+
+                // Close nav when a link is clicked (for mobile)
+                const navLinks = document.querySelector('.main-nav .nav-links');
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // --- Navbar Toggle for Mobile ---
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.main-nav .nav-links');
+
+        if (navToggle && navLinks) { // Ensure elements exist
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // --- Form Submission Script --- (Keep your existing code here)
         const form = document.getElementById('contact-form');
         const submitButton = document.getElementById('submitButton');
         const formMessage = document.getElementById('formMessage');
