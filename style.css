@@ -389,7 +389,7 @@ footer {
   .main-nav ul.nav-links {
     flex-direction: column; /* Stack links vertically */
     position: absolute;
-    top: 100%; /* Position directly below the header */
+    top: 87%; /* Position directly below the header */
     left: 0;
     width: 100%;
     background-color: #333;
